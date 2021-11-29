@@ -8,17 +8,22 @@ Moves the Windows 10 volume control popup when you mouse over it. The app shows 
 
 ### From Source
 
-Install [Visual Studio](https://visualstudio.microsoft.com/downloads/) first (requires MSBuild and .NET 4.7.2).
+Install [Visual Studio](https://visualstudio.microsoft.com/downloads/) first (requires MSBuild and .NET 4.7.2). Then in Powershell:
 
 ```bash
 # (optional) Find MSBuild.exe
 Get-ChildItem -Path C:\ -Filter MSBuild.exe -Recurse -ErrorAction SilentlyContinue -Force
 
+# Get the code
 git clone https://github.com/driazati/windows-volume-popup-mover.git
 cd windows-volume-popup-mover
+
+# Build it
 MSBuild.exe OSDMover.sln /p:Configuration=Release
 
-
+# Run it
 ./bin/Release/OSDMover.exe
-```
 
+# Copy it to the startup folder to run it automatically
+Copy-Item .\bin\Release\OSDMover.exe -Destination $env:APPDATA\Microsoft\Windows\"Start Menu"\Programs\Startup
+```
