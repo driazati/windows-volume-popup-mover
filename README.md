@@ -10,7 +10,7 @@ Moves the Windows 10 volume control popup when you mouse over it. The app shows 
 
 Install [Visual Studio](https://visualstudio.microsoft.com/downloads/) first (requires MSBuild and .NET 4.7.2). Then in Powershell:
 
-```bash
+```powershell
 # (optional) Find MSBuild.exe
 Get-ChildItem -Path C:\ -Filter MSBuild.exe -Recurse -ErrorAction SilentlyContinue -Force
 
